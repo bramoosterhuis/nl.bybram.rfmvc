@@ -40,8 +40,8 @@
             {
                 "id": "set_speed",
                 "title": {
-                    "en": "Sets the speed of the ventilation.",
-                    "nl": "Zet de stand van de afzuiging"
+                    "en": "Speed of the ventilation.",
+                    "nl": "Zet ventilatie op."
                 },
                 "args": [
                     {
