@@ -1,0 +1,85 @@
+{
+    "id": "nl.bybram.rfmvc",
+    "name": {
+        "en": "rfmvc"
+    },
+    "version": "0.0.1",
+    "compatibility": "0.x",
+    "author": {
+        "name": "Bram Oosterhuis",
+        "email": "bram.oosterhuis.nl@gmail.com"
+    },
+    "signals": {
+        "433": {
+            "nRF905":{
+                "sof": [1,1,1,1,0,0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1,1,0,0,1],
+                "words": [
+                    [1, 0],
+                    [0, 1]
+                ],
+                "eof": [],
+                "manchesterUnit": 10,
+                "manchesterMaxUnits": 10,
+                "carrier": 433934000,
+                "repetitions": 200,
+                "sensitivity": 1.0,
+                "interval": 500,
+                "packing": true,
+                "rxTimeout": 200,
+                "modulation": {
+                    "type": "GFSK",
+                    "baudRate": 100000,
+                    "channelSpacing": 100000,
+                    "channelDeviation": 50000
+                }
+            }
+        }
+    },
+    "flow": {
+        "actions": [
+            {
+                "id": "set_speed",
+                "title": {
+                    "en": "Sets the speed of the ventilation.",
+                    "nl": "Zet de stand van de afzuiging"
+                },
+                "args": [
+                    {
+                        "name": "speed",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "0",
+                                "label": {
+                                    "en": "Off",
+                                    "nl": "Uit"
+                                }
+                            },
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "Low",
+                                    "nl": "Laag"
+                                }
+                            },
+                            {
+                                "id": "2",
+                                "label": {
+                                    "en": "Medium",
+                                    "nl": "Midden"
+                                }
+                            },
+                            {
+                                "id": "3",
+                                "label": {
+                                    "en": "High",
+                                    "nl": "Hoog"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
