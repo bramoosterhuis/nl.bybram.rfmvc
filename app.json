@@ -1,7 +1,8 @@
 {
     "id": "nl.bybram.rfmvc",
     "name": {
-        "en": "rfmvc"
+        "en": "Ventilation",
+        "nl": "Ventilatie"
     },
     "version": "0.0.1",
     "compatibility": "0.x",
@@ -9,6 +10,9 @@
         "name": "Bram Oosterhuis",
         "email": "bram.oosterhuis.nl@gmail.com"
     },
+    "permissions": [
+        "homey:wireless:433"
+    ],
     "signals": {
         "433": {
             "nRF905":{
@@ -45,6 +49,16 @@
                 },
                 "args": [
                     {
+                        "name": "id",
+                        "type": "number",
+                        "min": 0,
+                        "max": 16,
+                        "placeholder": {
+                            "en": "Which ID?",
+                            "nl": "Welke ID?"
+                        }
+                    },
+                    {
                         "name": "speed",
                         "type": "dropdown",
                         "values": [
@@ -70,7 +84,7 @@
                                 }
                             },
                             {
-                                "id": "3",
+                                "id": "4",
                                 "label": {
                                     "en": "High",
                                     "nl": "Hoog"
