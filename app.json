@@ -10,16 +10,55 @@
         "name": "Bram Oosterhuis",
         "email": "bram.oosterhuis.nl@gmail.com"
     },
+    "description": {
+        "en": "Mechanical ventilation support for homey.",
+        "nl": "Mechanischeventilatie voor homey."
+    },
+    "category": [
+        "climate"
+    ],
     "permissions": [
         "homey:wireless:433"
     ],
     "signals": {
         "433": {
-            "nRF905":{
-                "sof": [1,1,1,1,0,0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1,1,0,0,1],
+            "nRF905": {
+                "sof": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    1,
+                    0,
+                    1,
+                    0,
+                    1,
+                    0,
+                    1,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1
+                ],
                 "words": [
-                    [1, 0],
-                    [0, 1]
+                    [
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1
+                    ]
                 ],
                 "eof": [],
                 "manchesterUnit": 10,
@@ -93,7 +132,76 @@
                         ]
                     }
                 ]
+            },
+            {
+                "id": "measure_hc",
+                "title": {
+                    "en": "Measure humidity and temperature.",
+                    "nl": "Meet luchtvochtigheid en temperatuur."
+                },
+                "args": [
+                    {
+                        "name": "id",
+                        "type": "number",
+                        "min": 0,
+                        "max": 16,
+                        "placeholder": {
+                            "en": "Which ID?",
+                            "nl": "Welke ID?"
+                        }
+                    },
+                    {
+                        "name": "speed",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "0",
+                                "label": {
+                                    "en": "Off",
+                                    "nl": "Uit"
+                                }
+                            },
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "Low",
+                                    "nl": "Laag"
+                                }
+                            },
+                            {
+                                "id": "2",
+                                "label": {
+                                    "en": "Medium",
+                                    "nl": "Midden"
+                                }
+                            },
+                            {
+                                "id": "4",
+                                "label": {
+                                    "en": "High",
+                                    "nl": "Hoog"
+                                }
+                            }
+                        ]
+                    }
+                ]
             }
         ]
-    }
+    },
+    "drivers": [
+        {
+            "id": "RFMCV-MOTOR",
+            "name": {
+                "en": "Motor control for  mechanical ventilation.",
+                "nl": "Motoraansturing voor mechanischeventilatie"
+            }
+        },
+        {
+            "id": "RFMCV-SENSOR",
+            "name": {
+                "en": "Humidity sensor.",
+                "nl": "Sensor voor luchtvoctigheid"
+            }
+        }
+    ]
 }

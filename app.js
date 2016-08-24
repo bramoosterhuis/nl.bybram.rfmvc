@@ -28,4 +28,20 @@ function set_speed(id ,speed) {
 	});
 }
 
+function measureHC(id ,speed) {
+    var payload = new Buffer([
+        parseInt(id),
+        parseInt(speed)
+    ]);
+    radio.send(0x58, payload, function (err) {
+        if (!err) {
+            Homey.log("Ventilation " + id + " set to: " + speed)
+            return true;
+        } else {
+            Homey.log("Ventilation " + id + " ACK error")
+            return false;
+        }
+    });
+}
+
 module.exports.init = init;
